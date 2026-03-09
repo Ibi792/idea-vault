@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# macOS system files
+.DS_Store
+
+# Editor directories
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.local
+
+# Build output (for future use)
+dist/
+build/

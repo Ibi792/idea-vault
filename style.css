@@ -1,0 +1,207 @@
+/* ── Reset & Base ─────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg:        #0f1117;
+  --color-surface:   #1a1d27;
+  --color-border:    #2e3148;
+  --color-primary:   #7c6af7;
+  --color-primary-h: #9d8fff;
+  --color-accent:    #f7c26a;
+  --color-text:      #e4e6f0;
+  --color-muted:     #7a7f9a;
+
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Courier New', monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --transition: 0.25s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── Header ───────────────────────────────────────────── */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2.5rem;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--color-primary);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.logo-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.logo-text span {
+  color: var(--color-primary);
+}
+
+.header-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+/* ── Hero ─────────────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 5rem 1.5rem 3rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hero-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 .highlight {
+  color: var(--color-primary);
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+}
+
+/* ── Coming Soon Section ──────────────────────────────── */
+.coming-soon-section {
+  padding: 2rem 1.5rem 6rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.section-label {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 2rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.feature-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.feature-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(124, 106, 247, 0.06), transparent);
+  pointer-events: none;
+}
+
+.card-pill {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(124, 106, 247, 0.15);
+  color: var(--color-primary-h);
+  margin-bottom: 0.85rem;
+}
+
+.feature-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--color-text);
+}
+
+.feature-card p {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+}
